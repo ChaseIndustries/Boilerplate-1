@@ -34,3 +34,7 @@ xmlrpc.php
 /profiles
 /scripts
 /themes
+
+# Other
+/.sass-cache
+/node_modules

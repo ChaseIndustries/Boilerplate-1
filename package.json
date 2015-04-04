@@ -1,0 +1,16 @@
+{
+  "name": "projectName",
+  "version": "1.0.0",
+  "description": "{{ Insert project description }}",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-compass": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-qunit": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-mysql-dump": "*",
+    "grunt-uncss": "*"
+  }
+}
