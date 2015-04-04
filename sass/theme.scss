@@ -5,6 +5,15 @@ $break-small: 768px;
 $break-medium: 992px;
 $break-large: 1200px;
 
+// These are defined in 'foundation/components/_settings.scss'
+// but its easier to manage them here
+$primary-color: #008CBA;
+$secondary-color: #e7e7e7;
+$alert-color: #f04124;
+$success-color: #43AC6A;
+$warning-color: #f08a24;
+$info-color: #a0d3e8;
+
 // Behold, here are all the Foundation components.
 @import 'foundation/components/grid';
 @import 'foundation/components/accordion';

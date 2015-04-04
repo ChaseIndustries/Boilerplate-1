@@ -3,3 +3,17 @@
  * Allows (utility) classes to be applied on the fly to elements to keep css clutter down and reduce
  * class duplicates.
  */
+
+// Classes we commonly point producers to that are named differently
+// between bootstrap and foundation
+.pull-right {
+  @extend .right;
+}
+
+.pull-left {
+  @extend .left;
+}
+
+.hidden {
+  @extend .hide;
+}

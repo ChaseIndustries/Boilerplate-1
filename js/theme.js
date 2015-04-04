@@ -17,6 +17,9 @@
    */
   svgToPng();
 
+  // initialize foundation plugins
+  $(document).foundation();
+
   /**
    * Stuff to run on resize.
    */
