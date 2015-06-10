@@ -51,28 +51,15 @@ module.exports = function(grunt) {
   			files :  {
     			'css/theme.css': 'sass/theme.scss'
     		},
+    		tasks : ['notify:sass'],
 				options: {
 					sassDir: 'sass',
 					cssDir: 'css',
 					sourcemap : true,
-					includePaths: require('node-bourbon').includePaths
+					includePaths: require('node-bourbon').includePaths,
 				},
 			},
 		},
-    drush: {
-      cc_theme_registry: {
-        args: ['cc', 'theme-registry']
-      },
-      cc_registry: {
-        args: ['cc', 'registry']
-      },
-      cc_css_js: {
-        args: ['cc', 'css-js']
-      },
-      cc_all: {
-        args: ['cc', 'all']
-      }
-    },
     webfont: {
       icons : {
         src: 'images/icons/*.svg',
@@ -91,30 +78,16 @@ module.exports = function(grunt) {
           title : "CSS Compiled",
           message : "SASS Task Complete"
         }
-      },
-      drush : { 
-        options : {
-          title : "Cache Cleared",
-          message : "Cleared the Drupal cache"
-        }
       }
     },
     watch: {
       grunt: { files: ['Gruntfile.js'] },
       sass: {
         files: ['<%= global_vars.theme_scss %>/*.scss','<%= global_vars.theme_scss %>/*/*.scss'],
-        tasks: ['sass', 'notify:sass', 'drush:cc_css_js', 'notify:drush'],
+        tasks: ['sass', 'notify:sass'],
         options: {
           livereload: true
         }
-      },
-      templates: {
-        files: ['**/*.tpl.php', '**/*.info', 'template.php'],
-        tasks: ['drush:cc_theme_registry', 'notify:drush']
-      },
-      info :{
-        files: ['**/*.info', 'template.php'],
-        tasks: ['drush:cc_registry', 'notify:drush']
       },
       svg : {
         files : ['images/icons/source/*.svg'],

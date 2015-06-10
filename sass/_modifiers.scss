@@ -40,19 +40,19 @@ img.pull-left {
 }
 
 .highlight-1 {
-  color:$color-1;
+  color:$highlight-1;
 }
 
 .bgc-highlight-1 {
-  background:$color-1;
+  background:$highlight-1;
 }
 
 .highlight-2 {
-  color:$color-2;
+  color:$highlight-2;
 }
 
 .bgc-highlight-2 {
-  background:$color-2;
+  background:$highlight-2;
 }
 
 .no-margin-top {
@@ -110,5 +110,5 @@ img.pull-left {
 }
 
 .fade.active {
-  @include opacity(1);
+  opacity:1;
 }
