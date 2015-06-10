@@ -71,36 +71,32 @@
     };
   })();
   
-  Drupal.behaviors.STARTER = {
-    attach: function(context, settings) {
-      
-      // Initialize plugins/page  
-      $(document).foundation();
-      svgToPng();
-      
-      // Initialize page
-      init();
-      
-      /**
-       * Event listeners
-       */
-   
-      $(".js__nav-toggle").on("click", function(e){
-         e.stopPropagation();
-         toggleNav();
-       });
+  // Initialize plugins/page  
+  $(document).foundation();
+  svgToPng();
+  
+  // Initialize page
+  init();
+  
+  /**
+   * Event listeners
+   */
 
-      $(window).resize(function() {
-        waitForFinalEvent(function() {
-          init();
-          // close the nav if it's open
-          if($("body").hasClass("open")){
-            toggleNav();
-          }
-        }, 200, "global");
-      });
-    }
-  };
+  $(".js__nav-toggle").on("click", function(e){
+     e.stopPropagation();
+     toggleNav();
+   });
+
+  $(window).resize(function() {
+    waitForFinalEvent(function() {
+      init();
+      // close the nav if it's open
+      if($("body").hasClass("open")){
+        toggleNav();
+      }
+    }, 200, "global");
+  });
+}
   
   
 
