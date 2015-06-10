@@ -2,6 +2,10 @@
  * @file modifiers.scss
  * Allows (utility) classes to be applied on the fly to elements to keep css clutter down and reduce
  * class duplicates.
+ *
+ * These are classes that perform very basic functions for
+ * elements on the site, such as a background color or adding
+ * a simple border
  */
 
 // Classes we commonly point producers to that are named differently
@@ -16,4 +20,95 @@
 
 .hidden {
   @extend .hide;
+}
+
+img.pull-right {
+  margin-left:1em;
+  margin-bottom:1em
+}
+img.pull-left {
+  margin-right:1em;
+  margin-bottom:1em;
+}
+
+.bigger {
+  font-size:1.2em;
+}
+
+.smaller {
+  font-size:.8em;
+}
+
+.highlight-1 {
+  color:$color-1;
+}
+
+.bgc-highlight-1 {
+  background:$color-1;
+}
+
+.highlight-2 {
+  color:$color-2;
+}
+
+.bgc-highlight-2 {
+  background:$color-2;
+}
+
+.no-margin-top {
+  margin-top:0 !important;
+}
+
+.no-margin-bottom {
+  margin-bottom:0 !important;
+}
+
+.no-margin-left {
+  margin-left:0 !important;
+}
+
+.no-margin-right {
+  margin-right:0 !important;
+}
+
+.margin-left {
+  margin-left:$spacing;
+}
+
+.margin-right {
+  margin-right:$spacing;
+}
+.margin-top {
+  margin-top:$spacing;
+}
+.margin-bottom {
+  margin-bottom:$spacing;
+}
+
+.padding-left {
+  padding-left:$spacing;
+}
+
+.padding-right {
+  padding-right:$spacing;
+}
+.padding-top {
+  padding-top:$spacing;
+}
+.padding-bottom {
+  padding-bottom:$spacing;
+}
+
+.dark {
+  &,* {
+    color:#fff !important;
+  }
+}
+
+.strong {
+  font-weight:600;
+}
+
+.fade.active {
+  @include opacity(1);
 }

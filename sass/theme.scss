@@ -1,64 +1,92 @@
-@charset 'UTF-8';
+/* @file
+ * This file is a custom file that loads all files. Each non-base layer
+ * can be disabled.
+ *
+ *
+ * This application file (THEMENAME.scss) is where all the partials are
+ * imported.
+ *
+ * Theme styles are categorized using SMACSS standards. They utilize
+ * categorization of styles into various categories. Those categories are the
+ * following:
+ *
+ * - Base: CSS reset/normalize plus HTML element styling.
+ * - Layout: Macro arrangement of a web page, including any grid systems.
+ * - Modules: Dictate minor layout modules or reusable elements.
+ * - States: Describe the appearance of a module in various states.
+ * - Theme: Specific customizations for your subtheme.
+ * For more information about this new Drupal css file standard, please review
+ * the following:
+ * - https://drupal.org/node/1887922
+ * - http://smacss.com/
+ * This project requires Bourbon to compile
+ * gem install bourbon
+ */
+ 
+// Fonts
+// Put fonts here
+ 
+// Breakpoints
 
-// Variables
+$small-screen: 640px;
+$medium-screen: 1025px;
+$large-screen: 1440px;
+$extra-large-screen:1920px;
 
+// Shorthand breakpoints
 
-// These are defined in 'foundation/components/_settings.scss'
+$break-sm: $small-screen;
+$break-md: $medium-screen;
+$break-lg: $large-screen;
+$break-xl: $extra-large-screen;
+
+// These are defined in '_foundation-variables.scss'
 // but its easier to manage them here. When I find other useful settings
 // I plan on also moving those into this file
-$primary-color: #008CBA;
-$secondary-color: #e7e7e7;
+
+$base:        #007dc5; //light blue
+$highlight-1: #30acb4; //teal
+$highlight-2: #7c223f; //maroon-ish
+$highlight-3: #df9727; //orange/yellow
+$dark-1:      #092759; //dark blue
+$gray-lt:     #ececec;
+$gray-md:     #808080;
+
 $alert-color: #f04124;
-$success-color: #43AC6A;
+$success-color: $highlight-1;
 $warning-color: #f08a24;
 $info-color: #a0d3e8;
 
-@import 'foundation/settings';
+// Other Arbitrary Values
 
-// Behold, here are all the Foundation components.
-@import 'foundation/components/grid';
-@import 'foundation/components/accordion';
-@import 'foundation/components/alert-boxes';
-@import 'foundation/components/block-grid';
-@import 'foundation/components/breadcrumbs';
-@import 'foundation/components/button-groups';
-@import 'foundation/components/buttons';
-@import 'foundation/components/clearing';
-@import 'foundation/components/dropdown';
-@import 'foundation/components/dropdown-buttons';
-@import 'foundation/components/flex-video';
-@import 'foundation/components/forms';
-@import 'foundation/components/icon-bar';
-@import 'foundation/components/inline-lists';
-@import 'foundation/components/joyride';
-@import 'foundation/components/keystrokes';
-@import 'foundation/components/labels';
-@import 'foundation/components/magellan';
-@import 'foundation/components/orbit';
-@import 'foundation/components/pagination';
-@import 'foundation/components/panels';
-@import 'foundation/components/pricing-tables';
-@import 'foundation/components/progress-bars';
-@import 'foundation/components/range-slider';
-@import 'foundation/components/reveal';
-@import 'foundation/components/side-nav';
-@import 'foundation/components/split-buttons';
-@import 'foundation/components/sub-nav';
-@import 'foundation/components/switches';
-@import 'foundation/components/tables';
-@import 'foundation/components/tabs';
-@import 'foundation/components/thumbs';
-@import 'foundation/components/tooltips';
-@import 'foundation/components/top-bar';
-@import 'foundation/components/type';
-@import 'foundation/components/offcanvas';
-@import 'foundation/components/visibility';
+$spacing: 15px;
+$radius: 5px;
+$footer-height:225px;
+$header-height:110px;
 
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Foundation imports
+// Init file contains required imports. Here's where we include normalize,
+// foundation and also bourbon.
+@import "base/init";
+// Comment out this import if you don't want to use normalize.
+@import "../../zurb_foundation/scss/normalize";
+// Import our mixins early so they can be used by other partials.
+@import "base/mixins";
+// Fix for some Drupal CSS quirks (Drupalisms).
+@import "base/drupal";
+
+//foundation icons
+@import "foundation-icons";
+
+//custom icons
+@import "icons";
 
 // Custom Theme Imports
-@import 'normalize';
-@import 'mixins';
 @import 'base';
 @import 'component';
 @import 'layout';
 @import 'modifiers';
+

@@ -4,3 +4,59 @@
  *   sidebar sections, the product lists and so on.
  */
 
+//
+//toggle menu
+//
+
+.nav-toggle {
+  right:$spacing;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  height:30px;
+  width:30px;
+  border-radius:3px;
+  background:#fff;
+  @include absolute-y(30px);
+  span {
+    position: absolute;
+    height: 2px;
+    width: 60%;
+    background: $dark-1;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .4s ease-in-out;
+    @include absolute-x();
+    @include transform-origin(0 1px);
+    &:nth-child(1){
+      top:9px;
+    }
+    &:nth-child(2), &:nth-child(3){
+      top:14px;
+    }
+    &:nth-child(4){
+      top:19px;
+    }
+  }
+  &.open {
+    span {
+      background:$dark-1;
+      &:nth-child(1){
+        top: 10px;
+        width: 0%;
+        opacity:0;
+      }
+      &:nth-child(2){
+        @include transform(rotate(45deg) translateX(-50%));
+      }
+      &:nth-child(3){
+        @include transform(rotate(-45deg) translateX(-50%));
+      }
+      &:nth-child(4){
+        top:20px;
+        width:0%;
+        opacity:0;
+      }
+    }
+  }
+}
